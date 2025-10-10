@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://ctipul6wqwppl"]
+
+[ext_resource type="Script" uid="uid://cts406ay53kv1" path="res://assets/scripts/enemy_plastic_ball.gd" id="1_5p5et"]
+[ext_resource type="Texture2D" uid="uid://r8qj2wbxu430" path="res://assets/sprites/enemys/plasticBall.png" id="1_oh4i1"]
+[ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_q37my"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5p5et"]
+radius = 9.055386
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q37my"]
+atlas = ExtResource("1_oh4i1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvqgh"]
+atlas = ExtResource("1_oh4i1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndwfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q37my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvqgh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q37my"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5p5et"]
+resource_name = "bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [0.0, -16.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvqgh"]
+_data = {
+&"RESET": SubResource("Animation_q37my"),
+&"bounce": SubResource("Animation_5p5et")
+}
+
+[node name="PlasticBall" type="Area2D"]
+script = ExtResource("1_5p5et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("CircleShape2D_5p5et")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_ndwfg")
+frame_progress = 0.87076014
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xvqgh")
+}
+autoplay = "bounce"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -10)
+texture = ExtResource("3_q37my")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
