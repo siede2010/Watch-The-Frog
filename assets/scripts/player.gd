@@ -22,7 +22,12 @@ enum actions {
 	Action
 }
 var currentAction = actions.Idle
+var lastAction = actions.Idle
 
+func setAction(action : actions):
+	lastAction = currentAction
+	currentAction = action
+	
 func faceDirection(dir):
 	if Sprite == null:
 		return
@@ -47,22 +52,22 @@ func _process(delta):
 			Animator.stop()
 			Animator.speed_scale = 1
 		if Input.is_action_pressed(LeftInput.action):
-			currentAction = actions.Move_Left
+			setAction(actions.Move_Left)
 			faceDirection(3)
 			if Animator:
 				Animator.play("jump",-1,1/moveInterval)
 		elif Input.is_action_pressed(RightInput.action):
-			currentAction = actions.Move_Right
+			setAction(actions.Move_Right)
 			faceDirection(1)
 			if Animator:
 				Animator.play("jump",-1,1/moveInterval)
 		elif Input.is_action_pressed(UpInput.action):
-			currentAction = actions.Move_Up
+			setAction(actions.Move_Up)
 			faceDirection(2)
 			if Animator:
 				Animator.play("jump",-1,1/moveInterval)
 		elif Input.is_action_pressed(DownInput.action):
-			currentAction = actions.Move_Down
+			setAction(actions.Move_Down)
 			faceDirection(0)
 			if Animator:
 				Animator.play("jump",-1,1/moveInterval)
@@ -72,22 +77,22 @@ func _process(delta):
 		Actor.position.y -= GridSpacing * pDelta
 		progress += pDelta
 		if progress == 1:
-			currentAction = actions.Idle
+			setAction(actions.Idle)
 	elif currentAction == actions.Move_Down:
 		Actor.position.y += GridSpacing * pDelta
 		progress += pDelta
 		if progress == 1:
-			currentAction = actions.Idle
+			setAction(actions.Idle)
 	elif currentAction == actions.Move_Right:
 		Actor.position.x += GridSpacing * pDelta
 		progress += pDelta
 		if progress == 1:
-			currentAction = actions.Idle
+			setAction(actions.Idle)
 	elif currentAction == actions.Move_Left:
 		Actor.position.x -= GridSpacing * pDelta
 		progress += pDelta
 		if progress == 1:
-			currentAction = actions.Idle
+			setAction(actions.Idle)
 	elif currentAction == actions.Action:
 		pass;
 	
@@ -99,15 +104,28 @@ func defeat():
 func _on_body_entered(body: Node2D) -> void:
 	# upon hitting a wall it will reverse it's action.
 	# This code thinks no walls will move, will need to be changed in the future.
+	print(currentAction,lastAction)
 	if currentAction == actions.Move_Left:
-		currentAction = actions.Move_Right
+		setAction(actions.Move_Right)
 	elif currentAction == actions.Move_Right:
-		currentAction = actions.Move_Left
+		setAction(actions.Move_Left)
 	elif currentAction == actions.Move_Up:
-		currentAction = actions.Move_Down
+		setAction(actions.Move_Down)
 	elif currentAction == actions.Move_Down:
-		currentAction = actions.Move_Up
-		
+		setAction(actions.Move_Up)
+	elif currentAction == actions.Idle:
+		if lastAction == actions.Move_Left:
+			setAction(actions.Move_Right)
+		elif lastAction == actions.Move_Right:
+			setAction(actions.Move_Left)
+		elif lastAction == actions.Move_Up:
+			setAction(actions.Move_Down)
+		elif lastAction == actions.Move_Down:
+			setAction(actions.Move_Up)
+			
+		Animator.speed_scale *= -1
+		return
+	
 	progress = 1 - progress # Inverts both the progress and speed scale.
 	Animator.speed_scale *= -1
 	
