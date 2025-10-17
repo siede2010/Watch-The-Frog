@@ -1,11 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctipul6wqwppl"]
+[gd_scene load_steps=13 format=3 uid="uid://ctipul6wqwppl"]
 
 [ext_resource type="Script" uid="uid://cts406ay53kv1" path="res://assets/scripts/enemy_plastic_ball.gd" id="1_5p5et"]
 [ext_resource type="Texture2D" uid="uid://r8qj2wbxu430" path="res://assets/sprites/enemys/plasticBall.png" id="1_oh4i1"]
+[ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_xvqgh"]
 [ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_q37my"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5p5et"]
 radius = 9.055386
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndwfg"]
+shader = ExtResource("2_xvqgh")
+shader_parameter/line_color = Color(1, 0, 0, 1)
+shader_parameter/line_thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q37my"]
 atlas = ExtResource("1_oh4i1")
@@ -66,7 +72,8 @@ _data = {
 &"bounce": SubResource("Animation_5p5et")
 }
 
-[node name="PlasticBall" type="Area2D"]
+[node name="PlasticBall" type="Area2D" groups=["danger"]]
+y_sort_enabled = true
 script = ExtResource("1_5p5et")
 direction = 2
 
@@ -75,6 +82,8 @@ z_index = 1
 shape = SubResource("CircleShape2D_5p5et")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_ndwfg")
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_ndwfg")
 frame_progress = 0.87076014
@@ -87,7 +96,9 @@ autoplay = "bounce"
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(0, -10)
+y_sort_enabled = true
+position = Vector2(-4.7683716e-07, -7)
+scale = Vector2(0.65625, 0.65625)
 texture = ExtResource("3_q37my")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

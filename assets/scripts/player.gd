@@ -31,7 +31,7 @@ func setAction(action : actions):
 func faceDirection(dir):
 	if Sprite == null:
 		return
-	Sprite.texture.set_region(Rect2(0, (int(dir) % 4) * 32,32,32))
+	Sprite.texture.set_region(Rect2(0, (int(dir) % 4) * 34,34,34))
 
 func _init():
 	
@@ -96,7 +96,6 @@ func _process(delta):
 	elif currentAction == actions.Action:
 		pass;
 	
-	Actor.z_index = Actor.position.y
 
 func defeat():
 	pass;
@@ -129,4 +128,10 @@ func _on_body_entered(body: Node2D) -> void:
 	progress = 1 - progress # Inverts both the progress and speed scale.
 	Animator.speed_scale *= -1
 	
+	pass # Replace with function body.
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("danger"):
+		queue_free()
 	pass # Replace with function body.

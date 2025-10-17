@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ct35hhal33br7"]
+[gd_scene load_steps=15 format=3 uid="uid://ct35hhal33br7"]
 
 [ext_resource type="Script" uid="uid://jwf2h1usjl01" path="res://assets/scripts/player.gd" id="1_xjjvf"]
+[ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_7vqky"]
 [ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog.png" id="2_gfahr"]
 [ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_7vqky"]
 
@@ -19,9 +20,14 @@ action = &"Down"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vqky"]
 size = Vector2(18, 18)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u2ccb"]
+shader = ExtResource("2_7vqky")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u2ccb"]
 atlas = ExtResource("2_gfahr")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 0, 34, 34)
 
 [sub_resource type="Animation" id="Animation_u2ccb"]
 length = 0.001
@@ -59,7 +65,8 @@ _data = {
 &"jump": SubResource("Animation_7vqky")
 }
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" groups=["player"]]
+y_sort_enabled = true
 script = ExtResource("1_xjjvf")
 LeftInput = SubResource("InputEventAction_gfahr")
 UpInput = SubResource("InputEventAction_7vqky")
@@ -71,6 +78,8 @@ z_index = -2
 shape = SubResource("RectangleShape2D_7vqky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_u2ccb")
 position = Vector2(0, -13)
 texture = SubResource("AtlasTexture_u2ccb")
 
@@ -81,7 +90,9 @@ libraries = {
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
+y_sort_enabled = true
 position = Vector2(0, -10)
 texture = ExtResource("3_7vqky")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

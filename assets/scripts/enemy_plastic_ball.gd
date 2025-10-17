@@ -15,7 +15,6 @@ func _process(delta):
 	Actor.position.x += sin(deg_to_rad(90*direction)) * GridSpacing * delta / moveInterval
 	Actor.position.y += cos(deg_to_rad(90*direction)) * GridSpacing * delta / moveInterval
 	
-	Actor.z_index = Actor.position.y
 
 func _on_body_entered(body: Node2D) -> void:
 	direction = (direction + 2) % 4
