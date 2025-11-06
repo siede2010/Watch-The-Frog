@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5t66qnsbc1d1"]
+
+[ext_resource type="Script" uid="uid://dopu86acmb1q7" path="res://assets/scripts/enemy_child.gd" id="1_ocjrr"]
+[ext_resource type="Texture2D" uid="uid://bqjyxwhaeyxkj" path="res://assets/sprites/frogs/temp.png" id="2_qhrak"]
+[ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_rcfku"]
+[ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_rcfku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qckby"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qckby"]
+shader = ExtResource("2_rcfku")
+shader_parameter/line_color = Color(0.7529412, 0, 0, 1)
+shader_parameter/line_thickness = 1.0
+
+[node name="Area2D" type="Area2D" groups=["danger"]]
+collision_layer = 2
+script = ExtResource("1_ocjrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qckby")
+
+[node name="Temp" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qckby")
+position = Vector2(0, -20)
+texture = ExtResource("2_qhrak")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(0, -10)
+texture = ExtResource("3_rcfku")
+
+[node name="RayDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 180)
+collide_with_areas = true
+
+[node name="RayRight" type="RayCast2D" parent="."]
+target_position = Vector2(180, 0)
+collide_with_areas = true
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-180, 0)
+collide_with_areas = true
+
+[node name="RayUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -180)
+collide_with_areas = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

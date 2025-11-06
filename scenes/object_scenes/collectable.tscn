@@ -18,6 +18,7 @@ region = Rect2(0, 0, 18, 18)
 size = Vector2(16, 16)
 
 [node name="Collectable" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_2krw0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

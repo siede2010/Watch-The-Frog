@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qox7sej7lvr"
-path="res://.godot/imported/GrassNDirt.png-74c19ab2964d505b8fa238adcde977b6.ctex"
+uid="uid://cmmm5wjxet31a"
+path="res://.godot/imported/Frog-Defeat.png-199647327c82765ced49ea92a16a3f85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/floors/GrassNDirt.png"
-dest_files=["res://.godot/imported/GrassNDirt.png-74c19ab2964d505b8fa238adcde977b6.ctex"]
+source_file="res://assets/sprites/frogs/Frog-Defeat.png"
+dest_files=["res://.godot/imported/Frog-Defeat.png-199647327c82765ced49ea92a16a3f85.ctex"]
 
 [params]
 

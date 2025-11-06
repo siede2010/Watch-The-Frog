@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bewinbijwqh4f"]
+
+[ext_resource type="PackedScene" uid="uid://c74x1dgjvxxaw" path="res://scenes/playfield.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://5g6bwwywxvsn" path="res://scenes/title.tscn" id="2_sugp2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_0wfyh")]
+z_index = -1
+
+[node name="Node2D2" parent="." instance=ExtResource("2_sugp2")]
+z_index = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 5
+offset_right = 1152.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 0.29803923)
