@@ -35,7 +35,7 @@ func setAction(action : actions):
 func faceDirection(dir):
 	if Sprite == null:
 		return
-	Sprite.texture.set_region(Rect2(0, (int(dir) % 4) * 34,34,34))
+	Sprite.frame_coords.y = dir % 4
 
 func _init():
 	pass;
@@ -57,7 +57,7 @@ func _process(delta):
 	if currentAction == actions.Idle:
 		progress = 0
 		if Animator:
-			Animator.stop()
+			Animator.play("idle")
 			Animator.speed_scale = 1
 		if cooldown <= 0:
 			if Input.is_action_pressed(LeftInput.action):

@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="WatchTheFrog"
+config/version="0.0.1"
 run/main_scene="uid://c74x1dgjvxxaw"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://r2h4vnu1rk2s"
 
 [display]
 
