@@ -28,6 +28,10 @@ var currentAction = actions.Idle
 var lastAction = actions.Idle
 var cooldown = 0
 
+signal gain_points
+
+var points = 0
+
 func setAction(action : actions):
 	lastAction = currentAction
 	currentAction = action
@@ -38,6 +42,7 @@ func faceDirection(dir):
 	Sprite.frame_coords.y = dir % 4
 
 func _init():
+	gain_points.connect(points_add)
 	pass;
 
 var animationMult = 1
@@ -164,6 +169,10 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	pass # Replace with function body.
 
+func points_add(p):
+	points += p
+	print(points)
+	pass
 
 func _on_area_entered(area: Area2D) -> void:
 	if not alive:

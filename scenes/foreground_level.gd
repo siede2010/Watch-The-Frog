@@ -7,6 +7,3 @@ func mapSolid(a):
 
 func _ready():
 	solidMap = get_used_cells().filter(mapSolid);
-	for i in solidMap:
-		print(i)
-		print(get_cell_tile_data(i))

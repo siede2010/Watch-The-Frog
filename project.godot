@@ -18,6 +18,8 @@ config/icon="uid://r2h4vnu1rk2s"
 
 [display]
 
+window/size/viewport_width=852
+window/size/viewport_height=588
 window/stretch/mode="viewport"
 
 [global_group]

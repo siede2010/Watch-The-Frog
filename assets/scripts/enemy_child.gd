@@ -31,6 +31,7 @@ func _process(delta):
 	var pDelta = delta / moveInterval
 	if chasing:
 		pDelta *= chaseMult
+	pDelta = min(1-progress,pDelta)
 	progress += pDelta
 	Actor.position.x += sin(deg_to_rad(90*direction)) * GridSpacing * pDelta
 	Actor.position.y += cos(deg_to_rad(90*direction)) * GridSpacing * pDelta
@@ -47,6 +48,8 @@ func _process(delta):
 	
 	if progress >= 1:
 		progress = 0
+		if direction == nextDirection and randi() % 10 == 0:
+			nextDirection = randi() % 4
 		direction = nextDirection
 		faceDirection(direction)
 		

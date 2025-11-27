@@ -20,5 +20,8 @@ func faceDirection(dir):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
+		print("collected")
+		if area.has_signal("gain_points"):
+			area.emit_signal("gain_points",points)
 		queue_free()
 	pass # Replace with function body.

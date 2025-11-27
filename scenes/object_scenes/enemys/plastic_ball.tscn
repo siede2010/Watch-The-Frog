@@ -78,6 +78,7 @@ script = ExtResource("1_5p5et")
 direction = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 1
 shape = SubResource("CircleShape2D_5p5et")
 
@@ -86,7 +87,8 @@ y_sort_enabled = true
 material = SubResource("ShaderMaterial_ndwfg")
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_ndwfg")
-frame_progress = 0.87076014
+autoplay = "default"
+frame_progress = 0.9959941
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
