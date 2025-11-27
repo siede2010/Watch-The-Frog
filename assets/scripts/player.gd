@@ -60,26 +60,49 @@ func _process(delta):
 			Animator.play("idle")
 			Animator.speed_scale = 1
 		if cooldown <= 0:
-			if Input.is_action_pressed(LeftInput.action):
-				setAction(actions.Move_Left)
-				faceDirection(3)
-				if Animator:
-					Animator.play("jump",-1,animationMult)
-			elif Input.is_action_pressed(RightInput.action):
-				setAction(actions.Move_Right)
-				faceDirection(1)
-				if Animator:
-					Animator.play("jump",-1,animationMult)
-			elif Input.is_action_pressed(UpInput.action):
-				setAction(actions.Move_Up)
-				faceDirection(2)
-				if Animator:
-					Animator.play("jump",-1,animationMult)
-			elif Input.is_action_pressed(DownInput.action):
-				setAction(actions.Move_Down)
-				faceDirection(0)
-				if Animator:
-					Animator.play("jump",-1,animationMult)
+			if playerID == -1:
+				if randi() % 10 == 1:
+					if randi() % 4 == 1:
+						setAction(actions.Move_Left)
+						faceDirection(3)
+						if Animator:
+							Animator.play("jump",-1,animationMult)
+					elif randi() % 3 == 1:
+						setAction(actions.Move_Right)
+						faceDirection(1)
+						if Animator:
+							Animator.play("jump",-1,animationMult)
+					elif randi() % 2 == 1:
+						setAction(actions.Move_Up)
+						faceDirection(2)
+						if Animator:
+							Animator.play("jump",-1,animationMult)
+					else:
+						setAction(actions.Move_Down)
+						faceDirection(0)
+						if Animator:
+							Animator.play("jump",-1,animationMult)
+			else:
+				if Input.is_action_pressed(LeftInput.action):
+					setAction(actions.Move_Left)
+					faceDirection(3)
+					if Animator:
+						Animator.play("jump",-1,animationMult)
+				elif Input.is_action_pressed(RightInput.action):
+					setAction(actions.Move_Right)
+					faceDirection(1)
+					if Animator:
+						Animator.play("jump",-1,animationMult)
+				elif Input.is_action_pressed(UpInput.action):
+					setAction(actions.Move_Up)
+					faceDirection(2)
+					if Animator:
+						Animator.play("jump",-1,animationMult)
+				elif Input.is_action_pressed(DownInput.action):
+					setAction(actions.Move_Down)
+					faceDirection(0)
+					if Animator:
+						Animator.play("jump",-1,animationMult)
 		
 	
 	if currentAction == actions.Move_Up:

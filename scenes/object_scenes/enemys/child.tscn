@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5t66qnsbc1d1"]
 
 [ext_resource type="Script" uid="uid://dopu86acmb1q7" path="res://assets/scripts/enemy_child.gd" id="1_ocjrr"]
-[ext_resource type="Texture2D" uid="uid://bqjyxwhaeyxkj" path="res://assets/sprites/frogs/temp.png" id="2_qhrak"]
 [ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_rcfku"]
+[ext_resource type="Texture2D" uid="uid://bb3pob4psljgh" path="res://assets/sprites/enemys/child.png" id="3_qhrak"]
 [ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_rcfku"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qckby"]
@@ -19,10 +19,12 @@ script = ExtResource("1_ocjrr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qckby")
 
-[node name="Temp" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_qckby")
 position = Vector2(0, -20)
-texture = ExtResource("2_qhrak")
+texture = ExtResource("3_qhrak")
+hframes = 4
+vframes = 4
 
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1

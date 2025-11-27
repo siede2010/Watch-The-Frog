@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmqiqxyhefhrm"]
+
+[ext_resource type="PackedScene" uid="uid://ct35hhal33br7" path="res://scenes/object_scenes/player.tscn" id="1_sjtmq"]
+
+[node name="Player" instance=ExtResource("1_sjtmq")]
+playerID = -1
+LeftInput = null
+UpInput = null
+RightInput = null
+DownInput = null

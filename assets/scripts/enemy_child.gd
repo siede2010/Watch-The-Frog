@@ -5,6 +5,7 @@ extends Area2D
 @export var chaseMult : float = 1.5
 
 @onready var Actor = $"."
+@onready var Sprite = $Sprite
 # @onready var Animator = $AnimationPlayer
 @onready var Rays : Array[RayCast2D] = [
 	$RayDown,
@@ -16,6 +17,11 @@ extends Area2D
 var direction : int = 0
 var nextDirection : int = 0
 var chasing : bool = false
+
+func faceDirection(dir):
+	if Sprite == null:
+		return
+	Sprite.frame_coords.y = dir % 4
 
 func _ready():
 	pass;
@@ -42,9 +48,13 @@ func _process(delta):
 	if progress >= 1:
 		progress = 0
 		direction = nextDirection
+		faceDirection(direction)
+		
+	Sprite.frame_coords.x = floor(progress * 4)
 
 func _on_body_entered(body: Node2D) -> void:
 	nextDirection = direction + (randi() % 3) + 1 % 4
 	direction = (direction + 2) % 4
+	faceDirection(direction)
 	progress = 1 - progress
 	chasing = false

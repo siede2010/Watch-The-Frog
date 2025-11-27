@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqjyxwhaeyxkj"
-path="res://.godot/imported/temp.png-49019c940dd853aa91838649a628051c.ctex"
+uid="uid://bb3pob4psljgh"
+path="res://.godot/imported/child.png-d54914c2bdca6c9480ce6a3bccfdb115.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/frogs/temp.png"
-dest_files=["res://.godot/imported/temp.png-49019c940dd853aa91838649a628051c.ctex"]
+source_file="res://assets/sprites/enemys/child.png"
+dest_files=["res://.godot/imported/child.png-d54914c2bdca6c9480ce6a3bccfdb115.ctex"]
 
 [params]
 
