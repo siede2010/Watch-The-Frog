@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dj7fx6krgni7"]
 
-[ext_resource type="Script" uid="uid://c1nrwe8mbocl5" path="res://scoreTracker.gd" id="1_4wj8o"]
+[ext_resource type="Script" uid="uid://c1nrwe8mbocl5" path="res://assets/scripts/scoreTracker.gd" id="1_4wj8o"]
 [ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_hm5l7"]
 [ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog.png" id="3_pta7t"]
 [ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="4_q4ygh"]
@@ -8,15 +8,15 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jnnd0"]
 shader = ExtResource("2_hm5l7")
 shader_parameter/line_color = Color(1, 0.63529414, 0, 1)
-shader_parameter/line_thickness = 1.0
+shader_parameter/line_thickness = 2.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tefec"]
 atlas = ExtResource("3_pta7t")
 region = Rect2(16, 16, 34, 34)
 
 [node name="ScoreTracker" type="HBoxContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 178.0
+offset_bottom = 63.0
 script = ExtResource("1_4wj8o")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -36,4 +36,5 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 4
 theme_override_constants/shadow_outline_size = 4
-text = "0000"
+theme_override_font_sizes/font_size = 36
+text = "00000"

@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddkax8q2b5x7k"]
+
+[ext_resource type="Script" uid="uid://ss5553igyprt" path="res://scenes/ui_scenes/ingame_ui.gd" id="1_nwmmw"]
+[ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="1_tgrub"]
+[ext_resource type="PackedScene" uid="uid://dj7fx6krgni7" path="res://scenes/ui_scenes/score_tracker.tscn" id="2_nwmmw"]
+[ext_resource type="Texture2D" uid="uid://gpjy8ux2fu5x" path="res://assets/sprites/UI/Pause Knopf.png" id="3_2gjrw"]
+[ext_resource type="Texture2D" uid="uid://c88c14vfqtne5" path="res://assets/sprites/UI/Menü Knopf.png" id="4_hgoxu"]
+[ext_resource type="Texture2D" uid="uid://bswnfdlbaex0w" path="res://assets/sprites/UI/Player1Icon.png" id="6_g3odh"]
+[ext_resource type="Texture2D" uid="uid://dwi8pf78v3fmj" path="res://assets/sprites/UI/Player2Icon.png" id="7_3ruy2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwmmw")
+
+[node name="LevelName" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 852.0
+offset_bottom = 36.0
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="LevelName"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_tgrub")
+theme_override_colors/font_color = Color(0.7825956, 0.7881182, 0.79914975, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Level 1 - Ahoy My Tormi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 851.0
+offset_bottom = 114.0
+
+[node name="Label2" type="Label" parent="Timer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_tgrub")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 72
+text = "0:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Remainder" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_top = 499.0
+offset_right = 851.0
+offset_bottom = 588.0
+ratio = 0.5
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="Remainder"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_tgrub")
+theme_override_colors/font_color = Color(0.9882353, 0, 0.25490198, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 72
+text = "34 Left"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UIbuttons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 38.0
+offset_right = 852.0
+offset_bottom = 104.0
+alignment = 2
+
+[node name="Pause" type="TextureButton" parent="UIbuttons"]
+layout_mode = 2
+texture_normal = ExtResource("3_2gjrw")
+texture_pressed = ExtResource("3_2gjrw")
+texture_hover = ExtResource("3_2gjrw")
+texture_disabled = ExtResource("3_2gjrw")
+texture_focused = ExtResource("3_2gjrw")
+
+[node name="Menu" type="TextureButton" parent="UIbuttons"]
+layout_mode = 2
+texture_normal = ExtResource("4_hgoxu")
+texture_pressed = ExtResource("4_hgoxu")
+texture_hover = ExtResource("4_hgoxu")
+texture_disabled = ExtResource("4_hgoxu")
+texture_focused = ExtResource("4_hgoxu")
+
+[node name="Scores" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 140.0
+
+[node name="P1Score" parent="Scores" instance=ExtResource("2_nwmmw")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Player1Icon" type="Sprite2D" parent="Scores/P1Score"]
+position = Vector2(58, 53)
+texture = ExtResource("6_g3odh")
+
+[node name="P2Score" parent="Scores" instance=ExtResource("2_nwmmw")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Player2Icon" type="Sprite2D" parent="Scores/P2Score"]
+position = Vector2(56, 54)
+texture = ExtResource("7_3ruy2")

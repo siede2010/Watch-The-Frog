@@ -28,7 +28,14 @@ var currentAction = actions.Idle
 var lastAction = actions.Idle
 var cooldown = 0
 
+var respawnPoint : Vector2
+var respawnDuration = -1
+var respawning = false
+var respawnfromPoint : Vector2
+
 signal gain_points
+signal respawn
+signal update_points
 
 var points = 0
 
@@ -43,10 +50,15 @@ func faceDirection(dir):
 
 func _init():
 	gain_points.connect(points_add)
+	respawn.connect(respawn_func)
 	pass;
 
 var animationMult = 1
 func _ready():
+	print(get_tree().current_scene)
+	if get_tree().current_scene.has_signal("link_player"):
+		get_tree().current_scene.emit_signal("link_player",self)
+	respawnPoint = Vector2(position)
 	animationMult = 1/moveInterval
 	pass;
 
@@ -55,6 +67,24 @@ var progress = 0;
 func _process(delta):
 	cooldown -= delta
 	# TEST code to see if faceRotation would act as anticipated
+	if (respawning):
+		respawnDuration -= delta
+		if (respawnDuration < 0):
+			respawning = false
+			alive = true
+			Sprite_Defeat.visible = false
+			Sprite.visible = true
+			position = respawnPoint
+		else:
+			if int((respawnDuration**0.5) * 20) % 2 == 0:
+				position = respawnfromPoint
+				Sprite_Defeat.visible = true
+				Sprite.visible = false
+			else:
+				position = respawnPoint
+				Sprite_Defeat.visible = false
+				Sprite.visible = true
+	
 	if not alive:
 		return
 	
@@ -135,6 +165,21 @@ func _process(delta):
 	
 
 func defeat():
+	#if playerID == -1:
+	await get_tree().create_timer(1).timeout
+	respawn_func()
+	pass;
+	
+func respawn_func():
+	Animator.play("RESET")
+	alive = false
+	progress = 0
+	currentAction = actions.Idle
+	respawnfromPoint = Vector2(position)
+	respawnDuration = 1;
+	respawning = true
+	
+	print(respawnPoint,respawnfromPoint)
 	pass;
 
 func _on_body_entered(body: Node2D) -> void:
@@ -172,6 +217,7 @@ func _on_body_entered(body: Node2D) -> void:
 func points_add(p):
 	points += p
 	print(points)
+	update_points.emit(playerID,points)
 	pass
 
 func _on_area_entered(area: Area2D) -> void:
@@ -181,4 +227,5 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("danger"):
 		Animator.play("Ouch")
 		alive = false
+		defeat()
 	pass # Replace with function body.

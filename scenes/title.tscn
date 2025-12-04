@@ -1,13 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://5g6bwwywxvsn"]
+[gd_scene load_steps=14 format=3 uid="uid://5g6bwwywxvsn"]
 
-[ext_resource type="Script" uid="uid://dc02duty0n7p3" path="res://ui_script.gd" id="1_wosw1"]
+[ext_resource type="Script" uid="uid://dc02duty0n7p3" path="res://assets/scripts/ui_script.gd" id="1_wosw1"]
 [ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="2_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://cd51wffjmbdvq" path="res://assets/sprites/UI/Knopf Grün 3.png" id="3_4rr2b"]
 [ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog.png" id="3_pyl7j"]
 [ext_resource type="Texture2D" uid="uid://cmmm5wjxet31a" path="res://assets/sprites/frogs/Frog-Defeat.png" id="4_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://dafdrl0hlpdmp" path="res://assets/sprites/UI/Knopf Rot 3.png" id="5_yql1r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia1n6"]
+texture = ExtResource("3_4rr2b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiwto"]
+texture = ExtResource("3_4rr2b")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4rr2b"]
+texture = ExtResource("3_4rr2b")
+modulate_color = Color(0.4029301, 1, 0.3609866, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rr2b"]
 atlas = ExtResource("3_pyl7j")
 region = Rect2(16, 16, 36, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w65of"]
+texture = ExtResource("5_yql1r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygloa"]
+texture = ExtResource("5_yql1r")
+modulate_color = Color(0.6872149, 0.68721503, 0.6872149, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yql1r"]
+texture = ExtResource("5_yql1r")
+modulate_color = Color(0.9876341, 0.80067843, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wosw1")
@@ -15,31 +39,35 @@ script = ExtResource("1_wosw1")
 [node name="ButtonPlay" type="Button" parent="."]
 texture_filter = 1
 texture_repeat = 1
-offset_left = 440.0
-offset_top = 424.0
-offset_right = 712.0
-offset_bottom = 512.0
+offset_left = 272.0
+offset_top = 328.0
+offset_right = 544.0
+offset_bottom = 416.0
 theme = ExtResource("2_p6dhs")
 theme_override_colors/font_hover_color = Color(0.76424456, 0.7783591, 1.1551381e-06, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.44594538, 0.33256802, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_ia1n6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hiwto")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4rr2b")
 text = "Play
 "
 icon = SubResource("AtlasTexture_4rr2b")
 expand_icon = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 32.0
-offset_right = 1120.0
-offset_bottom = 144.0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 840.0
+offset_bottom = 172.0
 theme = ExtResource("2_p6dhs")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 16
 theme_override_constants/outline_size = 16
 theme_override_constants/shadow_outline_size = 16
-theme_override_font_sizes/font_size = 144
+theme_override_font_sizes/font_size = 108
 text = "Watch the Frog"
 horizontal_alignment = 1
 
@@ -51,18 +79,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 440.0
-offset_top = 544.0
-offset_right = 712.0
-offset_bottom = 632.0
+offset_left = 272.0
+offset_top = 448.0
+offset_right = 544.0
+offset_bottom = 536.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_p6dhs")
-theme_override_colors/font_color = Color(1.4160296, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9030474, 0.5367579, 0.580046, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.93149, 0.07656369, 7.70092e-07, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxTexture_w65of")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ygloa")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yql1r")
 text = "Exit
 "
 icon = ExtResource("4_b3w7a")
