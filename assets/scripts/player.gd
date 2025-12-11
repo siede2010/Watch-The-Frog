@@ -59,6 +59,15 @@ func _init():
 	pass;
 	
 func _set_type(new_type : int):
+	if new_type == 2 and new_type != type: # big frog
+		moveInterval += 0.05
+		if type == 3:
+			moveInterval += 0.05
+	if new_type == 3 and new_type != type:
+		moveInterval -= 0.05
+		if type == 2:
+			moveInterval -= 0.05
+		
 	type = new_type
 	if Sprite:
 		Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([new_type]))
@@ -70,6 +79,9 @@ func _ready():
 		get_tree().current_scene.emit_signal("link_player",self)
 	respawnPoint = Vector2(position)
 	animationMult = 1/moveInterval
+	
+	if playerID == -1:
+		_set_type(randi() % 4)
 	
 	Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([type]))
 	rep_image.emit(Sprite.texture)

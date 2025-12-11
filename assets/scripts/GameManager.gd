@@ -7,10 +7,18 @@ var spawnPoints : Array[Node2D] = []
 signal spawnPointAdded
 signal levelDataUpdate
 # data storage
+
+var level_list : Array[PackedScene] = [
+	load("res://scenes/playfield.tscn")
+]
+
 var persistentData : Dictionary = {
-	player_count = 1,
+	current_level = 0,
+	
+	player_count = 2,
 	
 	player_0_type = 1,
+	player_1_type = 1,
 	
 	player_0_up = "Up_0",
 	player_0_left = "Left_0",

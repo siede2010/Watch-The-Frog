@@ -31,6 +31,8 @@ func _update_collectables(value):
 func _ready() -> void:
 	levelNameLabel.text = levelName
 	_update_collectables(GameManager.get_var_level("collectables"))
+	scores.size.y = 70 * GameManager.get_var("player_count")
+	scores.find_child("P1Score").visible = GameManager.get_var("player_count") >= 2
 
 func _process(delta: float) -> void:
 	timer += delta
