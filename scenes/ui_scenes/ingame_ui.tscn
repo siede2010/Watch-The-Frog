@@ -117,20 +117,20 @@ layout_mode = 0
 offset_right = 181.0
 offset_bottom = 140.0
 
+[node name="P0Score" parent="Scores" instance=ExtResource("2_nwmmw")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Player1Icon" type="Sprite2D" parent="Scores/P0Score"]
+position = Vector2(58, 53)
+texture = ExtResource("6_g3odh")
+
 [node name="P1Score" parent="Scores" instance=ExtResource("2_nwmmw")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
 
-[node name="Player1Icon" type="Sprite2D" parent="Scores/P1Score"]
-position = Vector2(58, 53)
-texture = ExtResource("6_g3odh")
-
-[node name="P2Score" parent="Scores" instance=ExtResource("2_nwmmw")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 3
-
-[node name="Player2Icon" type="Sprite2D" parent="Scores/P2Score"]
+[node name="Player2Icon" type="Sprite2D" parent="Scores/P1Score"]
 position = Vector2(56, 54)
 texture = ExtResource("7_3ruy2")

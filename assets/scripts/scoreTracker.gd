@@ -17,6 +17,7 @@ func _init():
 	pass
 	
 func _ready():
+	texture.texture = texture.texture.duplicate()
 	labelLength = label.text.length()
 	pass
 	
@@ -34,5 +35,6 @@ func _set_color(color : Color):
 	pass
 
 func _set_image(newTexture : Texture):
-	texture.texture = newTexture
+	print("SETTING IMAGE")
+	texture.texture.atlas = newTexture
 	pass

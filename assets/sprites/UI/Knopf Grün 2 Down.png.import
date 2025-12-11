@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rjbglr35670p"
-path="res://.godot/imported/Frog.png-bfab13db89a1b5ca7486ae4e5bcd241d.ctex"
+uid="uid://dxcilt4ir0fgh"
+path="res://.godot/imported/Knopf Grün 2 Down.png-587fc9284481e2d02b4e8ee2d775255e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/frogs/Frog.png"
-dest_files=["res://.godot/imported/Frog.png-bfab13db89a1b5ca7486ae4e5bcd241d.ctex"]
+source_file="res://assets/sprites/UI/Knopf Grün 2 Down.png"
+dest_files=["res://.godot/imported/Knopf Grün 2 Down.png-587fc9284481e2d02b4e8ee2d775255e.ctex"]
 
 [params]
 

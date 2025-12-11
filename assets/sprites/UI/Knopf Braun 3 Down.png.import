@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c63k4cc2raeng"
-path="res://.godot/imported/Frog 2.png-4d9e8290020746aff384c97f1dda403d.ctex"
+uid="uid://dfva7svleg4dd"
+path="res://.godot/imported/Knopf Braun 3 Down.png-81ffc2da276f22c87be0b5948f27f666.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/frogs/Frog 2.png"
-dest_files=["res://.godot/imported/Frog 2.png-4d9e8290020746aff384c97f1dda403d.ctex"]
+source_file="res://assets/sprites/UI/Knopf Braun 3 Down.png"
+dest_files=["res://.godot/imported/Knopf Braun 3 Down.png-81ffc2da276f22c87be0b5948f27f666.ctex"]
 
 [params]
 

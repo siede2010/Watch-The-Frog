@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0x8tlukqadjo"]
+
+[ext_resource type="Script" uid="uid://q7axhr5h8o5a" path="res://scenes/object_scenes/player_spawn_node.gd" id="1_yccpt"]
+
+[node name="Player_Spawn_Node" type="Node2D" groups=["player_spawn"]]
+script = ExtResource("1_yccpt")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

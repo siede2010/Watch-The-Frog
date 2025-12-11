@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dc02duty0n7p3" path="res://assets/scripts/ui_script.gd" id="1_wosw1"]
 [ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="2_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://cd51wffjmbdvq" path="res://assets/sprites/UI/Knopf Grün 3.png" id="3_4rr2b"]
-[ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog.png" id="3_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog_0.png" id="3_pyl7j"]
 [ext_resource type="Texture2D" uid="uid://cmmm5wjxet31a" path="res://assets/sprites/frogs/Frog-Defeat.png" id="4_b3w7a"]
 [ext_resource type="Texture2D" uid="uid://dafdrl0hlpdmp" path="res://assets/sprites/UI/Knopf Rot 3.png" id="5_yql1r"]
 

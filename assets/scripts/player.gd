@@ -36,13 +36,17 @@ var respawnfromPoint : Vector2
 signal gain_points
 signal respawn
 signal update_points
+signal set_type
+signal rep_image
 
+var type = 0
 var points = 0
 
 func setAction(action : actions):
 	lastAction = currentAction
 	currentAction = action
 	
+
 func faceDirection(dir):
 	if Sprite == null:
 		return
@@ -51,16 +55,24 @@ func faceDirection(dir):
 func _init():
 	gain_points.connect(points_add)
 	respawn.connect(respawn_func)
+	set_type.connect(_set_type)
 	pass;
+	
+func _set_type(new_type : int):
+	type = new_type
+	if Sprite:
+		Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([new_type]))
+		rep_image.emit(Sprite.texture)
 
 var animationMult = 1
 func _ready():
-	print(get_tree().current_scene)
 	if get_tree().current_scene.has_signal("link_player"):
 		get_tree().current_scene.emit_signal("link_player",self)
 	respawnPoint = Vector2(position)
 	animationMult = 1/moveInterval
-	pass;
+	
+	Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([type]))
+	rep_image.emit(Sprite.texture)
 
 var a = 0;
 var progress = 0;

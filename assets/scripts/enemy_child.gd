@@ -40,6 +40,8 @@ func _process(delta):
 	for ray in Rays:
 		if ray.is_colliding():
 			var collider = ray.get_collider()
+			if collider == null:
+				continue
 			if not collider.is_class("TileMapLayer") and collider.is_in_group("player") and collider.alive:
 				nextDirection = i 
 				chasing = true

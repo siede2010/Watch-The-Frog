@@ -13,6 +13,7 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
+	
 	vec2 size = TEXTURE_PIXEL_SIZE * line_thickness;
 	float outline = 0.0;
 	
