@@ -1,0 +1,300 @@
+[gd_scene load_steps=26 format=3 uid="uid://byod18lcrfgk7"]
+
+[ext_resource type="Texture2D" uid="uid://belcselw5mmnh" path="res://assets/sprites/UI/Knopf Braun 1 Down.png" id="1_a7oeg"]
+[ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="2_8u7ej"]
+[ext_resource type="Texture2D" uid="uid://cd51wffjmbdvq" path="res://assets/sprites/UI/Knopf Grün 3.png" id="3_2xwe4"]
+[ext_resource type="Texture2D" uid="uid://00iar5jowjc1" path="res://assets/sprites/UI/Knopf Braun 3.png" id="4_ta483"]
+[ext_resource type="Texture2D" uid="uid://dfva7svleg4dd" path="res://assets/sprites/UI/Knopf Braun 3 Down.png" id="5_my20r"]
+[ext_resource type="Texture2D" uid="uid://dafdrl0hlpdmp" path="res://assets/sprites/UI/Knopf Rot 3.png" id="6_3phtm"]
+[ext_resource type="Texture2D" uid="uid://bvynr1nrvkqoo" path="res://assets/sprites/UI/Knopf Rot 3 Down.png" id="7_pj1dp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dsgns"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ietny"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(8, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyu0d"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1gn1g"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(0, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6two5"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(8, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1vc8"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(16, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5bi35"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_orxlk"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(8, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcfdt"]
+texture = ExtResource("1_a7oeg")
+region_rect = Rect2(16, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1sqer"]
+texture = ExtResource("3_2xwe4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o44xu"]
+texture = ExtResource("3_2xwe4")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4msk1"]
+texture = ExtResource("3_2xwe4")
+modulate_color = Color(0.4029301, 1, 0.3609866, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tnvvo"]
+texture = ExtResource("4_ta483")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibq2h"]
+texture = ExtResource("5_my20r")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucnxy"]
+texture = ExtResource("4_ta483")
+modulate_color = Color(0.4029301, 1, 0.3609866, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kmsru"]
+texture = ExtResource("6_3phtm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdcku"]
+texture = ExtResource("7_pj1dp")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ac4i"]
+texture = ExtResource("6_3phtm")
+modulate_color = Color(0.4029301, 1, 0.3609866, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -458.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Top" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dsgns")
+
+[node name="Panel2" type="Panel" parent="Background/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_ietny")
+
+[node name="Panel3" type="Panel" parent="Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yyu0d")
+
+[node name="Mid" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1gn1g")
+
+[node name="Panel2" type="Panel" parent="Background/Mid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_6two5")
+
+[node name="Panel3" type="Panel" parent="Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_s1vc8")
+
+[node name="Bottom" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5bi35")
+
+[node name="Panel2" type="Panel" parent="Background/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_orxlk")
+
+[node name="Panel3" type="Panel" parent="Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rcfdt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Padding" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_8u7ej")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Padding3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Padding" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="ButtonSelect" type="Button" parent="VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8u7ej")
+theme_override_colors/font_hover_color = Color(0.76424456, 0.7783591, 1.1551381e-06, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.44594538, 0.33256802, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxTexture_1sqer")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_o44xu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4msk1")
+text = "Continue"
+
+[node name="Padding2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="Padding4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Padding" type="Control" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="ButtonSelect" type="Button" parent="VBoxContainer/HBoxContainer3"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8u7ej")
+theme_override_colors/font_hover_color = Color(0.76424456, 0.7783591, 1.1551381e-06, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.44594538, 0.33256802, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxTexture_tnvvo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ibq2h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ucnxy")
+text = "Options
+"
+
+[node name="Padding2" type="Control" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="Padding5" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Padding" type="Control" parent="VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="ButtonSelect" type="Button" parent="VBoxContainer/HBoxContainer4"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_8u7ej")
+theme_override_colors/font_hover_color = Color(0.76424456, 0.7783591, 1.1551381e-06, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.44594538, 0.33256802, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxTexture_kmsru")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jdcku")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1ac4i")
+text = "Exit"
+
+[node name="Padding2" type="Control" parent="VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="Padding2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2

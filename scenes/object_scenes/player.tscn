@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="2_7vqky"]
 [ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog_0.png" id="2_gfahr"]
 [ext_resource type="Texture2D" uid="uid://b3o0ivyip4w30" path="res://assets/sprites/frogs/shadow.png" id="3_7vqky"]
-[ext_resource type="Texture2D" uid="uid://cmmm5wjxet31a" path="res://assets/sprites/frogs/Frog-Defeat.png" id="5_u2ccb"]
+[ext_resource type="Texture2D" uid="uid://cmmm5wjxet31a" path="res://assets/sprites/frogs/Frog_0_Defeat.png" id="5_u2ccb"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_gfahr"]
 action = &"Left"
@@ -28,6 +28,7 @@ size = Vector2(18, 18)
 shader = ExtResource("2_7vqky")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
+shader_parameter/shadow_y = 0
 
 [sub_resource type="Animation" id="Animation_rerrf"]
 resource_name = "Ouch"

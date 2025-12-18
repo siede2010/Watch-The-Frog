@@ -72,6 +72,8 @@ func _set_type(new_type : int):
 	if Sprite:
 		Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([new_type]))
 		rep_image.emit(Sprite.texture)
+	if Sprite_Defeat:
+		Sprite_Defeat.texture = load("res://assets/sprites/frogs/Frog_{0}_Defeat.png".format([new_type]))
 
 var animationMult = 1
 func _ready():
@@ -84,6 +86,7 @@ func _ready():
 		_set_type(randi() % 4)
 	
 	Sprite.texture = load("res://assets/sprites/frogs/Frog_{0}.png".format([type]))
+	Sprite_Defeat.texture = load("res://assets/sprites/frogs/Frog_{0}_Defeat.png".format([type]))
 	rep_image.emit(Sprite.texture)
 
 var a = 0;

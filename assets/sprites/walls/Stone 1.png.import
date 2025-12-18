@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmmm5wjxet31a"
-path="res://.godot/imported/Frog-Defeat.png-199647327c82765ced49ea92a16a3f85.ctex"
+uid="uid://b2bl8fm61jd8a"
+path="res://.godot/imported/Stone 1.png-704bba7fe6756a01518ddc4790598870.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/frogs/Frog-Defeat.png"
-dest_files=["res://.godot/imported/Frog-Defeat.png-199647327c82765ced49ea92a16a3f85.ctex"]
+source_file="res://assets/sprites/walls/Stone 1.png"
+dest_files=["res://.godot/imported/Stone 1.png-704bba7fe6756a01518ddc4790598870.ctex"]
 
 [params]
 

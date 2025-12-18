@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://hp4tw1lxu5o0"]
 
-[ext_resource type="FontFile" uid="uid://qjk7u3yq375i" path="res://assets/fonts/CourneufRegular.ttf" id="1_petxj"]
+[ext_resource type="FontFile" uid="uid://djop6655v5rxj" path="res://assets/fonts/Symtext.ttf" id="1_petxj"]
 
 [resource]
 default_font = ExtResource("1_petxj")
