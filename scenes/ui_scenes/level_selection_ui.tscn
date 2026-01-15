@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c03p0h0oico48"]
+[gd_scene load_steps=6 format=3 uid="uid://c03p0h0oico48"]
 
 [ext_resource type="PackedScene" uid="uid://u126450trqu3" path="res://scenes/ui_scenes/level_select_btn.tscn" id="1_0pa86"]
 [ext_resource type="Script" uid="uid://uwpbqc8d1dcc" path="res://scenes/ui_scenes/level_selection_ui.gd" id="1_d3y7b"]
 [ext_resource type="PackedScene" uid="uid://c74x1dgjvxxaw" path="res://scenes/playfield.tscn" id="3_63ono"]
 [ext_resource type="PackedScene" uid="uid://b81fbhx5yqlq6" path="res://scenes/levels/level_merry_go_round.tscn" id="4_qdlks"]
+[ext_resource type="PackedScene" uid="uid://qbyfad1qd48n" path="res://scenes/levels/demo_end.tscn" id="5_jxebf"]
 
 [node name="LevelSelectionUI" type="Control"]
 layout_mode = 3
@@ -43,6 +44,7 @@ index = 2
 
 [node name="EndOfDemo" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_0pa86")]
 layout_mode = 2
+destination = ExtResource("5_jxebf")
 levelName = "End of Demo."
 index = 3
 
