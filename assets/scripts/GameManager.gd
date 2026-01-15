@@ -1,16 +1,41 @@
 extends Node
 
+static var levelReturnScene : PackedScene = load("res://scenes/ui_scenes/levelselection.tscn")
+
 # global references
 var player_scene : PackedScene = load("res://scenes/object_scenes/player.tscn")
 
 var spawnPoints : Array[Node2D] = []
 signal spawnPointAdded
 signal levelDataUpdate
+
+signal levelReturn
+signal nextLevel
 # data storage
 
-var level_list : Array[PackedScene] = [
-	load("res://scenes/playfield.tscn")
-]
+var initialized = false
+func _init() -> void:
+	if initialized:
+		return
+	initialized = true
+	levelReturn.connect(_levelReturn)
+	nextLevel.connect(_nextLevel)
+
+func _levelReturn():
+	get_tree().change_scene_to_packed(levelReturnScene)
+	pass
+	
+func _nextLevel():
+	var index = GameManager.get_var("level_index") + 1
+	print("Level done, looking for : " + str(index))
+	if not level_list.has(index) or level_list.get(index) == null:
+		_levelReturn()
+		return
+	GameManager.set_var("level_name",GameManager.get_var("levelname-" + str(index)))
+	GameManager.set_var("level_index",index)
+	load_level(level_list.get(index))
+
+var level_list : Dictionary[int,PackedScene] = {}
 
 var persistentData : Dictionary = {
 	current_level = 0,
@@ -78,9 +103,12 @@ func rem_spawn_point(node : Node2D):
 
 func load_level(scene : PackedScene):
 	levelData.clear()
+	nextLevel.disconnect(_nextLevel)
+	set_var_level("collectables",0)
 	get_tree().change_scene_to_packed(scene)
 	await get_tree().scene_changed
 	add_players()
+	nextLevel.connect(_nextLevel)
 	pass
 
 func add_players():

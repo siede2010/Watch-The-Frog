@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ceqrgvxwi5ap" path="res://assets/sprites/floors/Floor.png" id="1_jjaue"]
 [ext_resource type="Script" uid="uid://yckeva0elm1d" path="res://scenes/ui_scenes/player_selection.gd" id="1_t3pjh"]
 [ext_resource type="PackedScene" uid="uid://kd1slfa8pfx1" path="res://scenes/ui_scenes/player_select_card.tscn" id="2_ineya"]
-[ext_resource type="PackedScene" uid="uid://c74x1dgjvxxaw" path="res://scenes/playfield.tscn" id="2_llrio"]
+[ext_resource type="PackedScene" uid="uid://bxatupn3taoro" path="res://scenes/ui_scenes/levelselection.tscn" id="2_llrio"]
 [ext_resource type="Texture2D" uid="uid://bj37o8wq4osj2" path="res://assets/sprites/UI/Simple Box 1.png" id="4_llrio"]
 [ext_resource type="Texture2D" uid="uid://belcselw5mmnh" path="res://assets/sprites/UI/Knopf Braun 1 Down.png" id="5_ntbx8"]
 [ext_resource type="Texture2D" uid="uid://bswnfdlbaex0w" path="res://assets/sprites/UI/Player1Icon.png" id="6_pmqcv"]

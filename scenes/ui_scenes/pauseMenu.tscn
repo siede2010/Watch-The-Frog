@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://byod18lcrfgk7"]
+[gd_scene load_steps=27 format=3 uid="uid://byod18lcrfgk7"]
 
+[ext_resource type="Script" uid="uid://cd4tyxmyw08p0" path="res://scenes/ui_scenes/pause_menu.gd" id="1_8u7ej"]
 [ext_resource type="Texture2D" uid="uid://belcselw5mmnh" path="res://assets/sprites/UI/Knopf Braun 1 Down.png" id="1_a7oeg"]
 [ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="2_8u7ej"]
 [ext_resource type="Texture2D" uid="uid://cd51wffjmbdvq" path="res://assets/sprites/UI/Knopf Grün 3.png" id="3_2xwe4"]
@@ -86,6 +87,7 @@ offset_right = -458.0
 offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8u7ej")
 
 [node name="Background" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -256,6 +258,7 @@ theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = SubResource("StyleBoxTexture_tnvvo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ibq2h")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ucnxy")
+disabled = true
 text = "Options
 "
 
@@ -298,3 +301,7 @@ layout_mode = 2
 [node name="Padding2" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ButtonSelect" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/ButtonSelect" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer4/ButtonSelect" to="." method="_on_return_pressed"]

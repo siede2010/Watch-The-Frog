@@ -206,13 +206,11 @@ func respawn_func():
 	respawnDuration = 1;
 	respawning = true
 	
-	print(respawnPoint,respawnfromPoint)
 	pass;
 
 func _on_body_entered(body: Node2D) -> void:
 	# upon hitting a wall it will reverse it's action.
 	# This code thinks no walls will move, will need to be changed in the future.
-	print(currentAction,lastAction)
 	if currentAction == actions.Move_Left:
 		setAction(actions.Move_Right)
 	elif currentAction == actions.Move_Right:
@@ -238,14 +236,10 @@ func _on_body_entered(body: Node2D) -> void:
 	cooldown = 0.1
 	progress = 1 - progress # Inverts both the progress and speed scale.
 	Animator.speed_scale *= -1
-	
-	pass # Replace with function body.
 
 func points_add(p):
 	points += p
-	print(points)
 	update_points.emit(playerID,points)
-	pass
 
 func _on_area_entered(area: Area2D) -> void:
 	if not alive:

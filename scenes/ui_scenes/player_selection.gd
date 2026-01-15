@@ -28,8 +28,9 @@ func _on_btn_two_pressed() -> void:
 func _on_player_select_card_selection_finished() -> void:
 	confirmed += 1
 	if confirmed == GameManager.get_var("player_count"):
-		print("Change Scene to Level")
-		GameManager.load_level(nextScene)
-		#get_tree().change_scene_to_packed(nextScene)
+		#GameManager.load_level(nextScene)
+		print("Changing Scene")
+		print(get_tree().change_scene_to_packed(nextScene))
+		print("Change Scene")
 		
 	pass # Replace with function body.

@@ -124,6 +124,7 @@ scenes/6/scene = ExtResource("6_wc65j")
 scenes/7/scene = ExtResource("8_02urx")
 scenes/8/scene = ExtResource("9_xndl1")
 scenes/9/scene = ExtResource("10_hi56i")
+scenes/9/display_placeholder = ExtResource("10_hi56i")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xndl1"]
 texture = ExtResource("8_wc65j")

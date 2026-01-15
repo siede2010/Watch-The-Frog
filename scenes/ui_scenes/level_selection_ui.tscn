@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://c03p0h0oico48"]
+
+[ext_resource type="PackedScene" uid="uid://u126450trqu3" path="res://scenes/ui_scenes/level_select_btn.tscn" id="1_0pa86"]
+[ext_resource type="Script" uid="uid://uwpbqc8d1dcc" path="res://scenes/ui_scenes/level_selection_ui.gd" id="1_d3y7b"]
+[ext_resource type="PackedScene" uid="uid://c74x1dgjvxxaw" path="res://scenes/playfield.tscn" id="3_63ono"]
+[ext_resource type="PackedScene" uid="uid://b81fbhx5yqlq6" path="res://scenes/levels/level_merry_go_round.tscn" id="4_qdlks"]
+
+[node name="LevelSelectionUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3y7b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Introduction" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_0pa86")]
+layout_mode = 2
+destination = ExtResource("3_63ono")
+levelName = "Introduction"
+index = 1
+
+[node name="MerryGoRound" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_0pa86")]
+layout_mode = 2
+destination = ExtResource("4_qdlks")
+levelName = "Merry go round"
+index = 2
+
+[node name="EndOfDemo" parent="VBoxContainer/HBoxContainer" instance=ExtResource("1_0pa86")]
+layout_mode = 2
+levelName = "End of Demo."
+index = 3
+
+[connection signal="onTrigger" from="VBoxContainer/HBoxContainer/Introduction" to="." method="_on_trigger"]
+[connection signal="onTrigger" from="VBoxContainer/HBoxContainer/MerryGoRound" to="." method="_on_trigger"]
+[connection signal="onTrigger" from="VBoxContainer/HBoxContainer/EndOfDemo" to="." method="_on_trigger"]

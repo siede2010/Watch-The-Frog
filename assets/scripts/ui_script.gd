@@ -6,8 +6,6 @@ extends Node2D
 @export var playScene : PackedScene = null
 
 func _on_play_button_play_button_down() -> void:
-	print("Change Scene to Selection")
-	print(playScene.resource_path)
 	get_tree().change_scene_to_packed(playScene)
 	#GameManager.load_level(playScene)
 	

@@ -1,0 +1,544 @@
+[gd_scene load_steps=43 format=3 uid="uid://kd1slfa8pfx1"]
+
+[ext_resource type="Texture2D" uid="uid://bj37o8wq4osj2" path="res://assets/sprites/UI/Simple Box 1.png" id="1_0ig75"]
+[ext_resource type="Script" uid="uid://b1r4xc113nhee" path="res://scenes/ui_scenes/player_select_card.gd" id="1_faa8p"]
+[ext_resource type="Texture2D" uid="uid://belcselw5mmnh" path="res://assets/sprites/UI/Knopf Braun 1 Down.png" id="2_p7fvj"]
+[ext_resource type="Shader" uid="uid://bfrr0g0mxk477" path="res://shaders/highlight.gdshader" id="3_133sv"]
+[ext_resource type="Texture2D" uid="uid://b2i1egc2v8u3o" path="res://assets/sprites/UI/Pfeil Left.png" id="4_faa8p"]
+[ext_resource type="Theme" uid="uid://hp4tw1lxu5o0" path="res://assets/fonts/themes/courneufRegular.tres" id="5_4mkv7"]
+[ext_resource type="Texture2D" uid="uid://rjbglr35670p" path="res://assets/sprites/frogs/Frog_0.png" id="5_a1nwt"]
+[ext_resource type="Texture2D" uid="uid://c801lfbcjhh3d" path="res://assets/sprites/UI/Pfeil Right.png" id="6_a1nwt"]
+[ext_resource type="Texture2D" uid="uid://cd51wffjmbdvq" path="res://assets/sprites/UI/Knopf Grün 3.png" id="9_7k2hp"]
+[ext_resource type="Texture2D" uid="uid://dfva7svleg4dd" path="res://assets/sprites/UI/Knopf Braun 3 Down.png" id="10_4mkv7"]
+[ext_resource type="Shader" uid="uid://ba88211j8v1a0" path="res://shaders/transparency.gdshader" id="11_a1nwt"]
+[ext_resource type="Texture2D" uid="uid://bugf608eegnev" path="res://assets/sprites/frogs/Frog_0_Big.png" id="12_7k2hp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7k2hp"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0pb2"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(8, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p2xb"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnuef"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(0, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01qe5"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(8, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0in5"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(16, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyyku"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jgmx"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(8, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0agj"]
+texture = ExtResource("1_0ig75")
+region_rect = Rect2(16, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2yien"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1b4i"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(8, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tsgbg"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t408"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(0, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t75qn"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(8, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4m6us"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(16, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc6mo"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(0, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ugqf"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(8, 16, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eqy0q"]
+texture = ExtResource("2_p7fvj")
+region_rect = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k2hp"]
+atlas = ExtResource("5_a1nwt")
+region = Rect2(17, 16, 32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6reyi"]
+shader = ExtResource("3_133sv")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/shadow_y = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0tew"]
+shader = ExtResource("3_133sv")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/shadow_y = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p2xb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6reyi"]
+texture = ExtResource("9_7k2hp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0tew"]
+texture = ExtResource("9_7k2hp")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoorr"]
+texture = ExtResource("9_7k2hp")
+modulate_color = Color(0.4029301, 1, 0.3609866, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1nwt"]
+texture = ExtResource("10_4mkv7")
+
+[sub_resource type="Animation" id="Animation_faa8p"]
+resource_name = "newCard"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mkv7"]
+_data = {
+&"newCard": SubResource("Animation_faa8p")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7k2hp"]
+shader = ExtResource("11_a1nwt")
+shader_parameter/transparency = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0pb2"]
+atlas = ExtResource("12_7k2hp")
+region = Rect2(256, 150, 138, 240)
+
+[node name="Player_Select_Card" type="AspectRatioContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.5
+offset_top = -291.0
+offset_right = 216.5
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.75
+script = ExtResource("1_faa8p")
+
+[node name="Background" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Top" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7k2hp")
+
+[node name="Panel2" type="Panel" parent="Background/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_d0pb2")
+
+[node name="Panel3" type="Panel" parent="Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1p2xb")
+
+[node name="Mid" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nnuef")
+
+[node name="Panel2" type="Panel" parent="Background/Mid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_01qe5")
+
+[node name="Panel3" type="Panel" parent="Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_k0in5")
+
+[node name="Bottom" type="HBoxContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uyyku")
+
+[node name="Panel2" type="Panel" parent="Background/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_7jgmx")
+
+[node name="Panel3" type="Panel" parent="Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_f0agj")
+
+[node name="Foreground" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Foreground"]
+layout_mode = 2
+theme = ExtResource("5_4mkv7")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "Frog"
+horizontal_alignment = 1
+
+[node name="FrogFrame" type="AspectRatioContainer" parent="Foreground"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="Background" type="VBoxContainer" parent="Foreground/FrogFrame"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Top" type="HBoxContainer" parent="Foreground/FrogFrame/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/FrogFrame/Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2yien")
+
+[node name="Panel2" type="Panel" parent="Foreground/FrogFrame/Background/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_i1b4i")
+
+[node name="Panel3" type="Panel" parent="Foreground/FrogFrame/Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tsgbg")
+
+[node name="Mid" type="HBoxContainer" parent="Foreground/FrogFrame/Background"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/FrogFrame/Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8t408")
+
+[node name="Panel2" type="Panel" parent="Foreground/FrogFrame/Background/Mid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_t75qn")
+
+[node name="Panel3" type="Panel" parent="Foreground/FrogFrame/Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4m6us")
+
+[node name="Bottom" type="HBoxContainer" parent="Foreground/FrogFrame/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/FrogFrame/Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nc6mo")
+
+[node name="Panel2" type="Panel" parent="Foreground/FrogFrame/Background/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ugqf")
+
+[node name="Panel3" type="Panel" parent="Foreground/FrogFrame/Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_eqy0q")
+
+[node name="Frog" type="TextureRect" parent="Foreground/FrogFrame"]
+z_index = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_7k2hp")
+stretch_mode = 4
+
+[node name="FrogType" type="HBoxContainer" parent="Foreground"]
+layout_mode = 2
+alignment = 1
+
+[node name="backButton" type="TextureButton" parent="Foreground/FrogType"]
+material = SubResource("ShaderMaterial_6reyi")
+layout_mode = 2
+texture_normal = ExtResource("4_faa8p")
+texture_pressed = ExtResource("4_faa8p")
+texture_hover = ExtResource("4_faa8p")
+texture_focused = ExtResource("4_faa8p")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Foreground/FrogType"]
+layout_mode = 2
+theme = ExtResource("5_4mkv7")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 28
+text = "Frog Type"
+
+[node name="forwardButton" type="TextureButton" parent="Foreground/FrogType"]
+material = SubResource("ShaderMaterial_w0tew")
+layout_mode = 2
+texture_normal = ExtResource("6_a1nwt")
+texture_pressed = ExtResource("6_a1nwt")
+texture_hover = ExtResource("6_a1nwt")
+texture_focused = ExtResource("6_a1nwt")
+stretch_mode = 3
+
+[node name="TextRow" type="HBoxContainer" parent="Foreground"]
+layout_mode = 2
+alignment = 1
+
+[node name="Padding" type="Control" parent="Foreground/TextRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextPanel" type="PanelContainer" parent="Foreground/TextRow"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1p2xb")
+
+[node name="Background" type="VBoxContainer" parent="Foreground/TextRow/TextPanel"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Top" type="HBoxContainer" parent="Foreground/TextRow/TextPanel/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_2yien")
+
+[node name="Panel2" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_i1b4i")
+
+[node name="Panel3" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Top"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_tsgbg")
+
+[node name="Mid" type="HBoxContainer" parent="Foreground/TextRow/TextPanel/Background"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8t408")
+
+[node name="Panel2" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Mid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_t75qn")
+
+[node name="Panel3" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Mid"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4m6us")
+
+[node name="Bottom" type="HBoxContainer" parent="Foreground/TextRow/TextPanel/Background"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nc6mo")
+
+[node name="Panel2" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ugqf")
+
+[node name="Panel3" type="Panel" parent="Foreground/TextRow/TextPanel/Background/Bottom"]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_eqy0q")
+
+[node name="Label" type="Label" parent="Foreground/TextRow/TextPanel"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("5_4mkv7")
+theme_override_colors/font_color = Color(0.5280966, 0.8375905, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 18
+text = "This is a short description of the frog and/or its abilitys.
+Along with like."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Padding2" type="Control" parent="Foreground/TextRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SHBox" type="HBoxContainer" parent="Foreground"]
+layout_mode = 2
+alignment = 1
+
+[node name="Padding" type="Control" parent="Foreground/SHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="SelButton" type="Button" parent="Foreground/SHBox"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("5_4mkv7")
+theme_override_colors/font_hover_color = Color(0.76424456, 0.7783591, 1.1551381e-06, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.44594538, 0.33256802, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_6reyi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w0tew")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yoorr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_a1nwt")
+text = "Select"
+
+[node name="Padding2" type="Control" parent="Foreground/SHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4mkv7")
+}
+
+[node name="Frog" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_7k2hp")
+layout_direction = 2
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_d0pb2")
+expand_mode = 1
+stretch_mode = 4
+
+[connection signal="pressed" from="Foreground/FrogType/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Foreground/FrogType/forwardButton" to="." method="_on_forward_button_pressed"]
+[connection signal="pressed" from="Foreground/SHBox/SelButton" to="." method="_on_button_select_pressed"]

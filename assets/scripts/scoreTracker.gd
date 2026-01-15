@@ -35,6 +35,5 @@ func _set_color(color : Color):
 	pass
 
 func _set_image(newTexture : Texture):
-	print("SETTING IMAGE")
 	texture.texture.atlas = newTexture
 	pass

@@ -22,6 +22,7 @@ func _init() -> void:
 	update_image.connect(_update_image)
 	GameManager.levelDataUpdate.connect(_levelDataUpdate)
 
+
 func _levelDataUpdate(n,value):
 	if n == "collectables":
 		_update_collectables(value)
@@ -29,10 +30,14 @@ func _levelDataUpdate(n,value):
 func _update_collectables(value):
 	if remainderLabel:
 		remainderLabel.text = "{0} Left".format([value])
+	if value == 0:
+		GameManager.nextLevel.emit()
 
 func _ready() -> void:
+	levelName = "Level " + str(GameManager.get_var("level_index")) + " - " + str(GameManager.get_var("level_name"))
 	levelNameLabel.text = levelName
-	_update_collectables(GameManager.get_var_level("collectables"))
+	if GameManager.get_var_level("collectables") > 0:
+		_update_collectables(GameManager.get_var_level("collectables"))
 	scores.size.y = 70 * GameManager.get_var("player_count")
 	scores.find_child("P1Score").visible = GameManager.get_var("player_count") >= 2
 	scores.find_child("P0Score").find_child("Player1Icon").visible = GameManager.get_var("player_count") >= 2
@@ -82,3 +87,7 @@ func _on_menu_pressed() -> void:
 	menu.visible = true
 	menu.process_mode = Node.PROCESS_MODE_ALWAYS
 	pass # Replace with function body.
+
+
+func _on_menu_continue_pressed() -> void:
+	_on_pause_toggled(false)
